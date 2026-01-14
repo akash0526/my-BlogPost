@@ -4,12 +4,11 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'blog-content',
-
-  projectId: 'x6apaaxw',
+  title: 'dailyarticles',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool()], // Make sure visionTool() is GONE from here
 
   schema: {
     types: schemaTypes,
