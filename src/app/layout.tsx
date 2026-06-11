@@ -1,26 +1,34 @@
-import Navbar from './components/Navbar';
-import Script from 'next/script';
-import './globals.css';
+import Navbar from "./components/Navbar";
+import "./globals.css";
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ID_HERE"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
-      <body className="bg-white text-gray-900 dark:bg-gray-950 dark:text-white antialiased">
-        <Navbar />
-        <main>{children}</main>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin="anonymous"
+				/>
+				<meta
+					name="description"
+					content="Akash Adhikari — Full-Stack Developer, IT Specialist & Digital Strategist based in Doha, Qatar."
+				/>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<title>
+					Akash Adhikari — Full-Stack Developer | IT Specialist | Digital
+					Strategist
+				</title>
+			</head>
+			<body>
+				<Navbar />
+				<main>{children}</main>
+			</body>
+		</html>
+	);
 }
